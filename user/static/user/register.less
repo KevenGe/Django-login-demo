@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        border: solid gray 1px;
+        border-radius: 10px;
+        padding: 10px;
+
+        h1 {
+            text-align: center;
+        }
+
+        #error {
+            color:red;
+            //background: green;
+        }
+
+        form {
+            border: solid gray 1px;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap:10px;
+
+            input[type="submit"] {
+                grid-column-start: 1;
+                grid-column-end:3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+        }
+
+        #logout {
+            width: 300px;
+            margin: 5px;
+        }
+    }
+}

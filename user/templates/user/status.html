@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STATUS</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'user/register.css' %}">
+</head>
+<body>
+<div>
+    <h1>个人信息</h1>
+    {% if error %}
+        <p id="error">{{ error }}</p>
+    {% endif %}
+    <form method="post" action="{% url 'user:register' %}">
+        <label>
+            用户名
+        </label>
+        <input type="text" name="username" value="{{ user.username }}" disabled/>
+        <label>
+            财富
+        </label>
+        <input type="number" value="{{ user.webuser.money }}" disabled/>
+    </form>
+
+{#    <div>#}
+{#        <div>#}
+{#            <button id="add" type="button" onclick="window.location.href='{% url "user:logout" %}'">登出</button>#}
+{#            <button id="logout" type="button" onclick="window.location.href='{% url "user:logout" %}'">登出</button>#}
+{#        </div>#}
+{#        <div>#}
+{#            <button id="logout" type="button" onclick="window.location.href='{% url "user:logout" %}'">登出</button>#}
+{#        </div>#}
+{#    </div>#}
+
+    <form method="get" action="{% url 'user:operation' %}">
+        <label>
+            转账对方
+        </label>
+        <input type="text" name="username"/>
+        <label>
+            转账金额
+        </label>
+        <input type="number" name="number"/>
+        <input type="submit" value="转账">
+    </form>
+
+<button id="logout" type="button" onclick="window.location.href='{% url "user:logout" %}'">登出</button>
+</div>
+</body>
+</html>

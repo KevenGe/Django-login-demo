@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+<body>
+
+{% if dd %}
+    <ul>
+        {% for foo in dd %}
+            <li>
+                {{ foo }}<a href="{% url 'detail' 1 %}">{{ foo }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+        <p>No arr</p>
+{% endif %}
+
+</body>
+</html>

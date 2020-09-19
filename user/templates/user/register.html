@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'user/register.css' %}">
+</head>
+<body>
+<div>
+    <h1>欢迎注册</h1>
+    {% if error %}
+         <p id="error">{{ error }}</p>
+    {% endif %}
+    <form method="post" action="{% url 'user:register' %}">
+        <label>
+            用户名
+        </label>
+            <input type="text" name="username"/>
+        <label>
+            密码
+        </label>
+            <input type="password" name="password"/>
+        <input type="submit" value="注册">
+    </form>
+</div>
+</body>
+</html>
